@@ -1,15 +1,173 @@
-<html>
-  <head>
-    <title>Homepage saya</title>
-  </head>
-  <body>
-    <h1>Saya</h1>
-    <h2>Perkenalan</h2>
-    <p>
-      Perkenalkan, nama saya Affan davi nasution Ini adalah 
-      <i>homepage</i> 
-      <b>pertama</b> saya, karena saya baru belajar tentang 
-      cara membuat <b><i>homepage</i></b>.
-    </p>
-  </body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affan Library</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background-color:#f4f4f4;
+    color:#333;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:white;
+    padding:15px 0;
+    text-align:center;
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 20px;
+    color:#333;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#000;
+}
+
+section{
+    padding:100px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.center{
+    text-align:center;
+}
+
+.button{
+    display:inline-block;
+    margin:10px;
+    padding:10px 20px;
+    border:1px solid #333;
+    border-radius:5px;
+    text-decoration:none;
+    color:#333;
+    transition:0.3s;
+}
+
+.button:hover{
+    background:#333;
+    color:white;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+ul{
+    list-style:none;
+}
+
+ul li{
+    padding:8px 0;
+    border-bottom:1px solid #eee;
+}
+
+iframe{
+    width:100%;
+    max-width:560px;
+    height:315px;
+    margin-top:20px;
+    border-radius:8px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:white;
+    margin-top:40px;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#katalog">Katalog</a>
+<a href="#kegiatan">Kegiatan</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="center">
+<h1>Affan Library</h1>
+<p>Selamat datang di perpustakaan pribadi Affan.</p>
+
+<div>
+<a href="https://www.facebook.com/share/183qBQ6CpE/" target="_blank" class="button">Facebook</a>
+<a href="https://drive.google.com/file/d/1TxYVMCAwhRlTklV5JX5DPSBxneFD3S0K/view?usp=drive_link" target="_blank" class="button">My Biodata</a>
+</div>
+
+<h2 style="margin-top:40px;">Video Profil</h2>
+<iframe 
+src="https://www.youtube.com/embed/3xPqfLkyKfg"
+title="YouTube video"
+frameborder="0"
+allowfullscreen>
+</iframe>
+</section>
+
+<!-- KATALOG -->
+<section id="katalog">
+<h2>Daftar Buku</h2>
+<div class="card">
+<ul>
+<li>Manajemen Perpustakaan</li>
+<li>Digital Library</li>
+<li>Literasi Informasi</li>
+</ul>
+</div>
+</section>
+
+<!-- KEGIATAN -->
+<section id="kegiatan">
+<h2>Kegiatan Literasi</h2>
+<div class="card">
+<ul>
+<li>Program Literasi</li>
+<li>Sosialisasi Digitalisasi Arsip</li>
+<li>Diskusi Buku Bulanan</li>
+</ul>
+</div>
+</section>
+
+<footer>
+© 2026 Affan Library
+</footer>
+
+</body>
 </html>
+
