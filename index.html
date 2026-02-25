@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website resmi Affan Library - perpustakaan pribadi dengan koleksi literasi dan kegiatan digital.">
 <title>Affan Library</title>
 
 <style>
@@ -14,31 +15,44 @@
 }
 
 body{
-    font-family: 'Segoe UI', sans-serif;
-    background-color:#f4f4f4;
+    font-family:'Segoe UI', sans-serif;
     color:#333;
+    background-image:url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b?q=80&w=1600');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.overlay{
+    background:linear-gradient(
+        rgba(255,120,0,0.45),
+        rgba(75,0,130,0.55)
+    );
+    min-height:100vh;
 }
 
 nav{
     position:fixed;
     width:100%;
     top:0;
-    background:white;
+    background:rgba(255,255,255,0.9);
     padding:15px 0;
     text-align:center;
-    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+    backdrop-filter:blur(6px);
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
 }
 
 nav a{
     text-decoration:none;
-    margin:0 20px;
+    margin:0 15px;
     color:#333;
     font-weight:500;
     transition:0.3s;
 }
 
 nav a:hover{
-    color:#000;
+    color:#ff6f00;
 }
 
 section{
@@ -48,41 +62,57 @@ section{
 }
 
 h1{
-    font-size:36px;
+    font-size:38px;
     margin-bottom:10px;
+    color:white;
+    text-shadow:0 3px 10px rgba(0,0,0,0.4);
 }
 
 h2{
     font-size:24px;
     margin-bottom:20px;
+    color:white;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
 }
 
 .center{
     text-align:center;
 }
 
+.hero-text{
+    color:white;
+    text-shadow:0 2px 6px rgba(0,0,0,0.4);
+}
+
 .button{
     display:inline-block;
     margin:10px;
     padding:10px 20px;
-    border:1px solid #333;
-    border-radius:5px;
+    border:none;
+    border-radius:25px;
     text-decoration:none;
-    color:#333;
+    color:white;
+    background:linear-gradient(45deg,#ff8c00,#ff3c00);
     transition:0.3s;
+    cursor:pointer;
 }
 
 .button:hover{
-    background:#333;
-    color:white;
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 .card{
-    background:white;
+    background:rgba(255,255,255,0.95);
     padding:25px;
     margin-top:20px;
-    border-radius:8px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.card p{
+    color:#333;
+    text-shadow:none;
 }
 
 ul{
@@ -99,36 +129,47 @@ iframe{
     max-width:560px;
     height:315px;
     margin-top:20px;
+    border-radius:12px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
     border-radius:8px;
+    font-family:inherit;
 }
 
 footer{
     text-align:center;
     padding:20px;
-    background:white;
+    background:rgba(0,0,0,0.4);
+    color:white;
     margin-top:40px;
-    font-size:14px;
-    color:#777;
 }
 </style>
 </head>
 
 <body>
+<div class="overlay">
 
 <nav>
 <a href="#home">Home</a>
 <a href="#katalog">Katalog</a>
 <a href="#kegiatan">Kegiatan</a>
+<a href="#daftar">Daftar</a>
+<a href="#login">Login</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HOME -->
 <section id="home" class="center">
 <h1>Affan Library</h1>
-<p>Selamat datang di perpustakaan pribadi Affan.</p>
+<p class="hero-text">Menikmati literasi di bawah langit senja.</p>
 
 <div>
-<a href="https://www.facebook.com/share/183qBQ6CpE/" target="_blank" class="button">Facebook</a>
-<a href="https://drive.google.com/file/d/1TxYVMCAwhRlTklV5JX5DPSBxneFD3S0K/view?usp=drive_link" target="_blank" class="button">My Biodata</a>
+<a href="https://www.facebook.com/share/183qBQ6CpE/" target="_blank" rel="noopener noreferrer" class="button">Facebook</a>
+<a href="https://drive.google.com/file/d/1TxYVMCAwhRlTklV5JX5DPSBxneFD3S0K/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="button">My Biodata</a>
 </div>
 
 <h2 style="margin-top:40px;">Video Profil</h2>
@@ -164,10 +205,65 @@ allowfullscreen>
 </div>
 </section>
 
+<!-- PENDAFTARAN -->
+<section id="daftar">
+<h2>Pendaftaran Anggota</h2>
+<div class="card">
+<form>
+<label>Nama Lengkap</label><br>
+<input type="text" required><br><br>
+<label>Email</label><br>
+<input type="email" required><br><br>
+<label>Password</label><br>
+<input type="password" required><br><br>
+<button type="submit" class="button">Daftar</button>
+</form>
+</div>
+</section>
+
+<!-- LOGIN -->
+<section id="login">
+<h2>Login Anggota</h2>
+<div class="card">
+<form>
+<label>Email</label><br>
+<input type="email" required><br><br>
+<label>Password</label><br>
+<input type="password" required><br><br>
+<button type="submit" class="button">Login</button>
+</form>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Pemilik</h2>
+
+<div class="card">
+<p><strong>Nama:</strong> Affan</p>
+<p><strong>Email:</strong> affandavinasution@gmail.com</p>
+<p><strong>WhatsApp:</strong> 082290210742</p>
+<p><strong>Lokasi:</strong> Indonesia</p>
+</div>
+
+<h2 style="margin-top:30px;">Kirim Pesan</h2>
+<div class="card">
+<form>
+<label>Nama</label><br>
+<input type="text" required><br><br>
+<label>Email</label><br>
+<input type="email" required><br><br>
+<label>Pesan</label><br>
+<textarea rows="4" required></textarea><br><br>
+<button type="submit" class="button">Kirim</button>
+</form>
+</div>
+</section>
+
 <footer>
 © 2026 Affan Library
 </footer>
 
+</div>
 </body>
 </html>
-
