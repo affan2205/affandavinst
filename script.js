@@ -18,6 +18,24 @@ window.addEventListener("scroll", function(){
     }
 
 });
+function searchBook() {
+
+let input = document.getElementById("searchInput").value.toLowerCase();
+let books = document.querySelectorAll("#bookList li");
+
+books.forEach(function(book){
+
+let text = book.textContent.toLowerCase();
+
+if(text.includes(input)){
+book.style.display = "";
+}else{
+book.style.display = "none";
+}
+
+});
+
+}
 
 
 /* ANIMASI SAAT SCROLL */
