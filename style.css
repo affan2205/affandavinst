@@ -20,10 +20,10 @@ body{
     background-attachment:fixed;
 }
 #searchInput{
-width:100%;
-max-width:400px;
+width:300px;
 padding:10px;
-margin:20px 0;
+margin:20px auto;
+display:block;
 border-radius:5px;
 border:1px solid #ccc;
 font-size:16px;
@@ -32,19 +32,19 @@ font-size:16px;
 #bookList{
 list-style:none;
 padding:0;
+text-align:center;
 }
 
 #bookList li{
-background:white;
 margin:8px 0;
-padding:12px;
-border-radius:6px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+padding:8px;
+font-size:18px;
 }
 
 /* HEADER */
 header{
-    background:rgba(0,0,0,0.75);
+    header{
+background:transparent;
     padding:20px;
     text-align:center;
 }
@@ -79,10 +79,10 @@ nav a:hover{
 
 /* SECTION */
 section{
-    background:rgba(0,0,0,0.65);
-    margin:30px;
+    margin:30px auto;
     padding:25px;
-    border-radius:12px;
+    max-width:900px;
+    text-align:center;
 }
 
 section h2{
