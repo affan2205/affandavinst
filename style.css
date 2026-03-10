@@ -19,6 +19,28 @@ body{
     background-position:center;
     background-attachment:fixed;
 }
+#searchInput{
+width:100%;
+max-width:400px;
+padding:10px;
+margin:20px 0;
+border-radius:5px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+#bookList{
+list-style:none;
+padding:0;
+}
+
+#bookList li{
+background:white;
+margin:8px 0;
+padding:12px;
+border-radius:6px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
 
 /* HEADER */
 header{
