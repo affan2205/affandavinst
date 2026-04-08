@@ -1,58 +1,63 @@
-/* LOGIN MESSAGE */
-document.querySelector("form").addEventListener("submit", function(e){
-    e.preventDefault();
+/* LOGIN */
+const form = document.querySelector("form");
 
-    alert("Login berhasil! Selamat datang di Poda Na Lima Library");
+if(form){
+form.addEventListener("submit", function(e){
+e.preventDefault();
+alert("Login berhasil!");
 });
+}
 
-
-/* NAVBAR EFFECT SAAT SCROLL */
-window.addEventListener("scroll", function(){
-
-    let navbar = document.querySelector("nav");
-
-    if(window.scrollY > 50){
-        navbar.style.background = "rgba(0,0,0,0.9)";
-    } else {
-        navbar.style.background = "rgba(0,0,0,0.6)";
-    }
-
-});
-function searchBook() {
-
+/* SEARCH */
+function searchBook(){
 let input = document.getElementById("searchInput").value.toLowerCase();
 let books = document.querySelectorAll("#bookList li");
 
-books.forEach(function(book){
-
+books.forEach(book=>{
 let text = book.textContent.toLowerCase();
-
-if(text.includes(input)){
-book.style.display = "";
-}else{
-book.style.display = "none";
+book.style.display = text.includes(input) ? "" : "none";
+});
 }
 
+/* SCROLL NAV */
+window.addEventListener("scroll", function(){
+let nav = document.querySelector("nav");
+nav.style.background = window.scrollY > 50 ? "rgba(0,0,0,0.9)" : "rgba(0,0,0,0.6)";
 });
 
-}
-
-
-/* ANIMASI SAAT SCROLL */
+/* ANIMASI */
 let sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", function(){
+let trigger = window.innerHeight * 0.8;
 
-    let trigger = window.innerHeight * 0.8;
+sections.forEach(sec=>{
+let top = sec.getBoundingClientRect().top;
+if(top < trigger){
+sec.style.opacity = "1";
+sec.style.transform = "translateY(0)";
+}
+});
+});
 
-    sections.forEach(section => {
+/* COUNTDOWN */
+const countdown = document.getElementById("countdown");
 
-        let top = section.getBoundingClientRect().top;
+if(countdown){
+const eventDate = new Date("July 20, 2026 16:30:00").getTime();
 
-        if(top < trigger){
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-        }
+setInterval(()=>{
+let now = new Date().getTime();
+let dist = eventDate - now;
+
+let d = Math.floor(dist/(1000*60*60*24));
+let h = Math.floor((dist%(1000*60*60*24))/(1000*60*60));
+let m = Math.floor((dist%(1000*60*60))/(1000*60));
+
+countdown.innerHTML = `Dimulai dalam ${d} hari ${h} jam ${m} menit`;
+
+},1000);
+}
 
     });
 
